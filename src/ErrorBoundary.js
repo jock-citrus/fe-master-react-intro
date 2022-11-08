@@ -16,12 +16,9 @@ class ErrorBoundary extends Component {
     }
   }
   render() {
-    console.log('NEW');
     if (this.state.redirect) {
-      console.log(1);
       return <Navigate to="/" />;
     } else if (this.state.hasError) {
-      console.log(2);
       return (
         <h2>
           There was an error with this listing. <Link to="/">Click here</Link>{" "}
@@ -29,8 +26,6 @@ class ErrorBoundary extends Component {
         </h2>
       );
     }
-
-    console.log(3)
 
     return this.props.children;
   }
